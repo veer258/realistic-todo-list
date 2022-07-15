@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 function App() {
 
+  
   const [thisItem, setThisItem] = useState("")
+  const [allTasks, setAllTasks] = useState([])
+  console.log(allTasks);
 
-  console.log(thisItem);
 
   return (
     <div className="container">
@@ -13,7 +15,9 @@ function App() {
       </div>
       <div className="form">
         <input type="text" onChange={(params) => setThisItem(params.target.value)}/>
-        <button>
+        <button onClick={
+          () => setAllTasks([...allTasks, thisItem])
+        }>
           <span>Add</span>
         </button>
       </div>
