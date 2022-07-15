@@ -23,7 +23,9 @@ function App() {
       </div>
       <div>
         <ul>
-          <li>A Item</li>
+          {allTasks.map(item => {
+            return <li>{item}</li>
+          })}
         </ul>
       </div>
     </div>
